@@ -51,7 +51,7 @@ class Driver:
                             LabAssistant.start(user)
                         elif (user.userType == "Nurse"):
                             Nurse.start(user)
-                        elif (user.userType == "Lab Assistant"):
+                        elif (user.userType == "Patient"):
                             Patient.start(user)
                 else:
                     print("Invalid username or password.")
