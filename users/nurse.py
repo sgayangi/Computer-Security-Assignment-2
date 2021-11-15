@@ -7,20 +7,26 @@ class Nurse:
     def start(user: User):
         x = input("""What would you like to do?
 1: View Patient File
-2: Update/Create Patient File\n""").strip()
-        patient_id = input("Input Patient ID: ")
-        # personal details, sickness details, drug prescriptions, and lab test prescriptions
-        file_type = input("""Select File Type.
+2: Update / Create Patient File\n""").strip()
+        if (x=="2"):
+            patient_id = input("Input Patient ID: ")
+            file_type = input("""Select File Type.
+1: Drug Prescriptions
+3: Sickness Details\n""")
+        elif x=="1":
+            patient_id = input("Input Patient ID: ")
+            file_type = input("""Select File Type.
 1: Drug Prescriptions
 2: Personal Details of Patient
 3: Sickness Details\n""")
+
         print(user.privilege_level)
         if x == "1":
             if user.hasReadAccess():
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
-        elif x==2:
+        elif x=="2":
             if user.hasWriteAccess():
                 print("Insufficient permissions")
             else:
