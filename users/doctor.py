@@ -11,21 +11,36 @@ class Doctor:
 2: Update/Create Patient File\n""").strip()
         patient_id = input("Input Patient ID: ")
         # personal details, sickness details, drug prescriptions, and lab test prescriptions
-        file_type = input("""Select File Type.
+        if (x == "1"):
+            file_type = input("""Select File Type.
 1: Drug Prescriptions
 2: Personal Details of Patient
 3: Sickness Details
 4: Lab Test Prescriptions\n""")
+        else:
+            file_type = input("""Select File Type.
+1: Drug Prescriptions
+3: Sickness Details
+4: Lab Test Prescriptions\n""")
         if x == "1":
+            if (file_type != "1" and file_type != "2" and file_type != "3" and file_type != "4"):
+                print("Invalid input")
+                return
             if user.privilege_level != "10" and user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
-        else:
+        elif x == "2":
+            if (file_type != "1" and file_type != "3" and file_type != "4"):
+                print("Invalid input")
+                return
             if user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(file_type, patient_id, data)
-    
+        
+        else:
+            print("Invalid input")
+            return
 # ddnnllpp
