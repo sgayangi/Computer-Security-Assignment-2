@@ -48,7 +48,7 @@ class Utilities:
     @staticmethod
     def returnPatientData(file_path:str):
         if not os.path.isfile(file_path):
-            lines = "Requested file does not exist for this patient."
+            return "Requested file does not exist for this patient."
         with open(file_path) as f:
             lines = f.read()
         return lines

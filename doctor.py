@@ -24,6 +24,6 @@ class Doctor:
             if user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
-                data = input("Input patient information")
+                data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(file_type, patient_id, data)
     

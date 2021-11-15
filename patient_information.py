@@ -17,43 +17,49 @@ class PatientInformation:
 
     @staticmethod
     def readDrugFile(patientID: str):
-        print("=================================")
-        print("Drug Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.returnPatientData(
-            "patient information/drug prescriptions/"+patientID+".txt"))
-        print("=================================")
-        print()
+        x = Utilities.returnPatientData(
+            "patient information/drug prescriptions/" + patientID + ".txt")
+        if (x != "Requested file does not exist for this patient."):
+            PatientInformation.printUserInformation(x, "Drug", patientID)
+        else:
+            print(x)
 
     @staticmethod
     def readLabFile(patientID: str):
-        print("=================================")
-        print("Lab Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.returnPatientData(
-            "patient information/lab test prescriptions/"+patientID+".txt"))
-        print("=================================")
-        print()
-
+        x = Utilities.returnPatientData(
+            "patient information/lab test prescriptions/" + patientID + ".txt")
+        if (x != "Requested file does not exist for this patient."):
+            PatientInformation.printUserInformation(x, "Lab", patientID)
+        else:
+            print(x)
+            
     @staticmethod
     def readPersonalFile(patientID: str):
-        print("=================================")
-        print("Personal Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.returnPatientData(
-            "patient information/personal details/"+patientID+".txt"))
-        print("=================================")
-        print()
+        x = Utilities.returnPatientData(
+            "patient information/personal details/" + patientID + ".txt")
+        if (x != "Requested file does not exist for this patient."):
+            PatientInformation.printUserInformation(x, "Personal", patientID)
+        else:
+            print(x)
 
     @staticmethod
     def readSicknessFile(patientID: str):
+        x = Utilities.returnPatientData(
+            "patient information/sickness details/" + patientID + ".txt")
+        if (x != "Requested file does not exist for this patient."):
+            PatientInformation.printUserInformation(x, "Sickness", patientID)
+        else:
+            print(x)
+
+    @staticmethod
+    def printUserInformation(data, type, patientID):
         print("=================================")
-        print("Sickness Details for Patient ID " + patientID)
+        print(type+ " Details for Patient ID " + patientID)
         print("=================================")
-        print(Utilities.returnPatientData(
-            "patient information/sickness details/"+patientID+".txt"))
+        print(data)
         print("=================================")
         print()
+
 
     @staticmethod
     def updatePatientFile(file_type: str, patientID: str ,data:str):
