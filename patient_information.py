@@ -6,11 +6,11 @@ class PatientInformation:
     def readPatientFile(patientID: str, file_type: str):
         if (file_type == "1"):
             PatientInformation.readDrugFile(patientID)
-        elif (file_type == "2"):
-            PatientInformation.readLabFile(patientID)
-        elif (file_type == "3"):
-            PatientInformation.readPersonalFile(patientID)
         elif (file_type == "4"):
+            PatientInformation.readLabFile(patientID)
+        elif (file_type == "2"):
+            PatientInformation.readPersonalFile(patientID)
+        elif (file_type == "3"):
             PatientInformation.readSicknessFile(patientID)
         else:
             print("Invalid file type")
@@ -65,11 +65,11 @@ class PatientInformation:
     def updatePatientFile(file_type: str, patientID: str ,data:str):
         if (file_type == "1"):
             PatientInformation.updateDrugFile(patientID, data)
-        elif (file_type == "2"):
-            PatientInformation.updateLabFile(patientID, data)
-        elif (file_type == "3"):
-            PatientInformation.updatePersonalFile(patientID, data)
         elif (file_type == "4"):
+            PatientInformation.updateLabFile(patientID, data)
+        elif (file_type == "2"):
+            PatientInformation.updatePersonalFile(patientID, data)
+        elif (file_type == "3"):
             PatientInformation.updateSicknessFile(patientID, data)
         else:
             print("Invalid file type")

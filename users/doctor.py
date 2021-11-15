@@ -13,9 +13,9 @@ class Doctor:
         # personal details, sickness details, drug prescriptions, and lab test prescriptions
         file_type = input("""Select File Type.
 1: Drug Prescriptions
-2: Lab Test Prescriptions
-3: Personal Details of Patient
-4: Sickness Details\n""")
+2: Personal Details of Patient
+3: Sickness Details
+4: Lab Test Prescriptions\n""")
         print(user.privilege_level)
         if x == "1":
             if user.privilege_level != "10" and user.privilege_level != "11":

@@ -1,6 +1,7 @@
 from common import Common
 from user import User
 from users.doctor import Doctor
+from users.lab import LabAssistant
 class Driver:
 
     @staticmethod
@@ -28,6 +29,8 @@ class Driver:
                     while True:
                         if (user.userType == "Doctor"):
                             Doctor.start(user)
+                        elif (user.userType == "Lab Assistant"):
+                            LabAssistant.start(user)
                 else:
                     print("Invalid username or password.")
             elif function == "q":
