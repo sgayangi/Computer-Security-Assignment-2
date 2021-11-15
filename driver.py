@@ -15,13 +15,29 @@ class Driver:
                 username = input('Username: ').strip()
                 password = input('Password: ').strip()
                 userType = input(
-                    'User Type: Select from "Doctor", "Nurse", "Lab Assistant", "Patient" \n').strip()
-                permissions = input(
-                    'Permissions: Select from "read", "write" \n').strip()
-                # if ((permissions != "read" or permissions != "write") or (userType != "Doctor" or userType != "Nurse" or userType != "Lab Assistant" or userType != "Patient")):
-                #     print("Invalid input")
-                #     quit()
-                Common.register(username, password, userType, permissions)
+"""Select a user type. (Enter relevant number)
+1: Doctor
+2: Nurse
+3: Lab Assistant
+4: Patient\n""").strip()
+                if userType != "4":
+                    permissions = input(
+                        """Select Permission Level. (Enter relevant number)
+1: Read Only
+2: Read and Write\n""").strip()
+                else:
+                    permissions = "1"
+                p = {
+                    "1": "read",
+                    "2": "write"
+                }
+                u = {
+                    "1": "Doctor",
+                    "2": "Nurse",
+                    "3": "Lab Assistant",
+                    "4": "Patient"
+                }
+                Common.register(username, password, u[userType], p[permissions])
                 print("Registration successful. Please login.")
             elif function == "1":
                 username = input('Username: ')
