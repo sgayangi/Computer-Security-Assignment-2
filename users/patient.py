@@ -9,8 +9,13 @@ class Patient:
 1: View Drug Prescriptions
 2: View Personal Details
 3: View Sick Details
-4: View Lab Test Prescriptions\n""").strip()
-        if user.hasReadAccess():
-            print("Insufficient permissions")
-        else:
-            PatientInformation.readPatientFile(user.id, x)
+4: View Lab Test Prescriptions
+5. Edit Personal Details\n""").strip()
+        if (x!="5"):
+            if user.hasReadAccess():
+                print("Insufficient permissions")
+            else:
+                PatientInformation.readPatientFile(user.id, x)
+        elif (x == "5"):
+            data = input("Input personal information: ")
+            PatientInformation.updatePatientFile("2", user.id, data)
