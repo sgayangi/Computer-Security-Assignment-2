@@ -1,6 +1,19 @@
 from utilities import Utilities
 
 class PatientInformation:
+
+    @staticmethod
+    def readPatientFile(patientID: str, file_type: str):
+        if (file_type == "1"):
+            PatientInformation.readDrugFile(patientID)
+        elif (file_type == "2"):
+            PatientInformation.readLabFile(patientID)
+        elif (file_type == "3"):
+            PatientInformation.readPersonalFile(patientID)
+        elif (file_type == "4"):
+            PatientInformation.readSicknessFile(patientID)
+        else:
+            print("Invalid file type")
     
     @staticmethod
     def readDrugFile(patientID: str):
@@ -41,4 +54,6 @@ class PatientInformation:
         print("=================================")
         print()
 
+    @staticmethod
+    def updatePatientFile(patientID: str): pass
 

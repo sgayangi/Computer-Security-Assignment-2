@@ -19,25 +19,10 @@ class Doctor:
             if user.privilege_level != "10" and user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
-                Doctor.readPatientFile(patient_id, file_type)
+                PatientInformation.readPatientFile(patient_id, file_type)
         else:
             if user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
-                Doctor.updatePatientFile(patient_id)
-
-    @staticmethod
-    def readPatientFile(patientID: str, file_type: str):
-        if (file_type == "1"):
-            PatientInformation.readDrugFile(patientID)
-        elif (file_type == "2"):
-            PatientInformation.readLabFile(patientID)
-        elif (file_type == "3"):
-            PatientInformation.readPersonalFile(patientID)
-        elif (file_type == "4"):
-            PatientInformation.readSicknessFile(patientID)
-        else:
-            print("Invalid file type")
+                PatientInformation.updatePatientFile(patient_id)
     
-    @staticmethod
-    def updatePatientFile(patientID: str): pass
