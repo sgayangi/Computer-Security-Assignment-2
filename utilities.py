@@ -43,3 +43,7 @@ class Utilities:
     def hashPassword(password):
         pw_hash = hashlib.sha256(password.encode("utf-8")).hexdigest()
         return pw_hash
+
+    @staticmethod
+    def returnPatientData(patientID, file_type): pass
+        
