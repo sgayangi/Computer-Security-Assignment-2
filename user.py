@@ -25,7 +25,13 @@ class User:
         elif (self.role == "Lab Assistant"):
             self.access_string = "0000"+self.privilege_level + "00"
         elif (self.role == "Patient"):
-            self.access_string = "000000"+self.privilege_level
+            self.access_string = "000000" + self.privilege_level
+            
+    def hasReadAccess(self):
+        return self.privilege_level != "10" and self.privilege_level != "11"
+
+    def hasWriteAccess(self):
+        return self.privilege_level != "10" and self.privilege_level != "11"
 # doctor
 # nurse
 # lab assistant

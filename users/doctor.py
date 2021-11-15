@@ -26,7 +26,7 @@ class Doctor:
             if (file_type != "1" and file_type != "2" and file_type != "3" and file_type != "4"):
                 print("Invalid input")
                 return
-            if user.privilege_level != "10" and user.privilege_level != "11":
+            if user.hasReadAccess():
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
@@ -34,12 +34,11 @@ class Doctor:
             if (file_type != "1" and file_type != "3" and file_type != "4"):
                 print("Invalid input")
                 return
-            if user.privilege_level != "11":
+            if user.hasWriteAccess():
                 print("Insufficient permissions")
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(file_type, patient_id, data)
-        
         else:
             print("Invalid input")
             return

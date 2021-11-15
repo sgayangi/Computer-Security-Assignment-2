@@ -11,12 +11,12 @@ class LabAssistant:
         patient_id = input("Input Patient ID: ")
         print(user.privilege_level)
         if x == "1":
-            if user.privilege_level != "10" and user.privilege_level != "11":
+            if user.hasReadAccess():
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, "4")
         else:
-            if user.privilege_level != "11":
+            if user.hasWriteAccess():
                 print("Insufficient permissions")
             else:
                 data = input("Input patient information: ")
