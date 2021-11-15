@@ -1,6 +1,6 @@
 from common import Common
 from user import User
-from doctor import Doctor
+from users.doctor import Doctor
 class Driver:
 
     @staticmethod
