@@ -8,9 +8,6 @@ class Utilities:
 
     @staticmethod
     def writeUserToFile(user: User):
-        # userTypes = ["Admin", "Doctor", "Nurse", "Lab Assistant", "Patient"]
-        # permissionType = ["read", "read write", "no permission"]
-        # so 00 means no permission
         permission = "no permission"
         if (user.privilege_level == "11"): permission = "write"
         elif (user.privilege_level == "10"):
@@ -62,4 +59,3 @@ class Utilities:
                           now.strftime("%Y-%m-%d %H:%M:%S") + "\n")
         file_object.write("\n")
         file_object.close()
-        
