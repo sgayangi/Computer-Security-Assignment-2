@@ -1,6 +1,4 @@
 import hashlib
-
-
 class User:
     def __init__(self, username: str, password: str, userType: str, permissions: str):
         """
@@ -9,8 +7,7 @@ class User:
         @param permissions: two bits, first for read, second for write, both 0 means no access
         """
         self.username = username
-        pw_hash = hashlib.sha256(password.encode("utf-8")).hexdigest()
-        self.password = pw_hash
+        self.password = password
         userTypes = ["Admin", "Doctor", "Nurse", "Lab Assistant", "Patient"]
         self.role = userTypes[userTypes.index(userType)]
         self.userType = userType 

@@ -20,6 +20,26 @@ class Utilities:
                 [user.username, user.password, user.role, permission])
 
     @staticmethod
+    def getUserFromCsv(username, password):
+        rowFromFile = []
+        with open('user_details/config.csv', 'rt') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                print(row)
+                if row[0] == username:
+                    rowFromFile = row
+        if rowFromFile == []:
+            print("Could not find user")
+            quit() 
+        else:
+            enteredPassword = Utilities.hashPassword(password)
+            if enteredPassword == rowFromFile[1]:
+                return User(rowFromFile[0], rowFromFile[1], rowFromFile[2], rowFromFile[3])
+            else:
+                print("Incorrect password. Please try again.")
+                quit()
+
+    @staticmethod
     def hashPassword(password):
-        # pw_hash = hashlib.sha256(password).hexdigest()
-        return password
+        pw_hash = hashlib.sha256(password.encode("utf-8")).hexdigest()
+        return pw_hash
