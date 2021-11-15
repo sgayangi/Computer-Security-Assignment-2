@@ -14,7 +14,6 @@ class Utilities:
         if (user.privilege_level == "11"): permission = "read write"
         elif (user.privilege_level == "10"):
             permission = "read"
-        
         with open('user_details/config.csv', 'a', newline="\n") as fd:
             writer = csv.writer(fd)
             writer.writerow(
@@ -48,15 +47,19 @@ class Utilities:
     @staticmethod
     def returnPatientData(file_path:str):
         if not os.path.isfile(file_path):
-            lines = "File does not exist."
+            lines = "Requested file does not exist for this patient."
         with open(file_path) as f:
             lines = f.read()
         return lines
 
     @staticmethod
-    def updatePatientData(file_path:str, data:str):
-        if not os.path.isfile(file_path):
-            lines = "File does not exist."
-        with open(file_path) as f:
-            lines = f.read()
-        return lines
+    def updatePatientData(file_path: str, data: str):
+        # if os.path.isfile(file_path):
+            # if file already exists
+        file_object = open(file_path, 'a')
+        file_object.write(data+"\n")
+        file_object.close()
+        # else:
+        #     file_object = open(file_path, 'a')
+        #     file_object.write(data+"\n")
+        #     file_object.close()

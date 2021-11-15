@@ -71,40 +71,22 @@ class PatientInformation:
 
     @staticmethod
     def updateDrugFile(patientID: str, data:str):
-        print("=================================")
-        print("Drug Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.updatePatientData(
-            "patient information/drug prescriptions/"+patientID+".txt", data))
-        print("=================================")
-        print()
+        Utilities.updatePatientData(
+            "patient information/drug prescriptions/"+patientID+".txt", data)
 
     @staticmethod
     def updateLabFile(patientID: str, data: str):
-        print("=================================")
-        print("Lab Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.updatePatientData(
-            "patient information/lab test prescriptions/"+patientID+".txt", data))
-        print("=================================")
-        print()
+        
+        Utilities.updatePatientData(
+            "patient information/lab test prescriptions/"+patientID+".txt", data)
+        
 
     @staticmethod
     def updatePersonalFile(patientID: str, data: str):
-        print("=================================")
-        print("Personal Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.updatePatientData(
-            "patient information/personal details/"+patientID+".txt", data))
-        print("=================================")
-        print()
+        Utilities.updatePatientData(
+            "patient information/personal details/"+patientID+".txt", data)
 
     @staticmethod
     def updateSicknessFile(patientID: str, data: str):
-        print("=================================")
-        print("Sickness Details for Patient ID " + patientID)
-        print("=================================")
-        print(Utilities.updatePatientData(
-            "patient information/sickness details/"+patientID+".txt", data))
-        print("=================================")
-        print()
+        Utilities.updatePatientData(
+            "patient information/sickness details/"+patientID+".txt", data)

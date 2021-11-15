@@ -16,7 +16,7 @@ class User:
         self.permissions = permissions
         if (permissions == "read"):
             self.privilege_level = "10"
-        elif (permissions == "write"):
+        elif (permissions == "read write"):
             self.privilege_level = "11"
 
 
