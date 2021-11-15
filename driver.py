@@ -2,6 +2,8 @@ from common import Common
 from user import User
 from users.doctor import Doctor
 from users.lab import LabAssistant
+from users.nurse import Nurse
+from users.patient import Patient
 class Driver:
 
     @staticmethod
@@ -31,6 +33,10 @@ class Driver:
                             Doctor.start(user)
                         elif (user.userType == "Lab Assistant"):
                             LabAssistant.start(user)
+                        elif (user.userType == "Nurse"):
+                            Nurse.start(user)
+                        elif (user.userType == "Lab Assistant"):
+                            Patient.start(user)
                 else:
                     print("Invalid username or password.")
             elif function == "q":

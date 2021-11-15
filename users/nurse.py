@@ -20,12 +20,13 @@ class Nurse:
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
-        else:
+        elif x==2:
             if user.privilege_level != "11":
                 print("Insufficient permissions")
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(
                     file_type, patient_id, data)
+        else: print("Invalid input.")
 
 # ddnnllpp
