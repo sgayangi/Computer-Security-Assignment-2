@@ -2,6 +2,7 @@ from user import User
 import hashlib
 import csv
 import os
+import datetime
 
 class Utilities:
 
@@ -25,9 +26,9 @@ class Utilities:
         with open('user_details/config.csv', 'rt') as f:
             reader = csv.reader(f)
             for row in reader:
-                print(row)
                 if row[0] == username:
                     rowFromFile = row
+                    break
         if rowFromFile == []:
             print("Could not find user")
             quit() 
@@ -54,12 +55,11 @@ class Utilities:
 
     @staticmethod
     def updatePatientData(file_path: str, data: str):
-        # if os.path.isfile(file_path):
-            # if file already exists
+        now = datetime.datetime.now()
         file_object = open(file_path, 'a')
         file_object.write(data+"\n")
+        file_object.write("Update done on: " +
+                          now.strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        file_object.write("\n")
         file_object.close()
-        # else:
-        #     file_object = open(file_path, 'a')
-        #     file_object.write(data+"\n")
-        #     file_object.close()
+        

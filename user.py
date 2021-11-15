@@ -19,7 +19,6 @@ class User:
         elif (permissions == "read write"):
             self.privilege_level = "11"
 
-
 # doctor
 # nurse
 # lab assistant

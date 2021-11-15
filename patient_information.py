@@ -1,6 +1,5 @@
 from utilities import Utilities
 
-
 class PatientInformation:
 
     @staticmethod

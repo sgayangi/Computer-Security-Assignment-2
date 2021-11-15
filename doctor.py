@@ -5,14 +5,14 @@ class Doctor:
     @staticmethod
     def start(user: User):
         x = input("""What would you like to do?
-1: View Patient File\n
+1: View Patient File
 2: Update/Create Patient File\n""").strip()
         patient_id = input("Input Patient ID: ")
         # personal details, sickness details, drug prescriptions, and lab test prescriptions
         file_type = input("""Select File Type.
-1: Drug Prescriptions\n
-2: Lab Test Prescriptions\n
-3: Personal Details of Patient\n
+1: Drug Prescriptions
+2: Lab Test Prescriptions
+3: Personal Details of Patient
 4: Sickness Details\n""")
         print(user.privilege_level)
         if x == "1":
