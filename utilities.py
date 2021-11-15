@@ -1,6 +1,7 @@
 from user import User
 import hashlib
 import csv
+import os
 
 class Utilities:
 
@@ -45,5 +46,9 @@ class Utilities:
         return pw_hash
 
     @staticmethod
-    def returnPatientData(patientID, file_type): pass
-        
+    def returnPatientData(file_path):
+        if not os.path.isfile(file_path):
+            lines = "File does not exist."
+        with open(file_path) as f:
+            lines = f.read()
+        return lines
