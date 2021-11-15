@@ -46,7 +46,15 @@ class Utilities:
         return pw_hash
 
     @staticmethod
-    def returnPatientData(file_path):
+    def returnPatientData(file_path:str):
+        if not os.path.isfile(file_path):
+            lines = "File does not exist."
+        with open(file_path) as f:
+            lines = f.read()
+        return lines
+
+    @staticmethod
+    def updatePatientData(file_path:str, data:str):
         if not os.path.isfile(file_path):
             lines = "File does not exist."
         with open(file_path) as f:
