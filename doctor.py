@@ -35,7 +35,7 @@ class Doctor:
         elif (file_type == "3"):
             PatientInformation.readPersonalFile(patientID)
         elif (file_type == "4"):
-            PatientInformation.readSicknessile(patientID)
+            PatientInformation.readSicknessFile(patientID)
         else:
             print("Invalid file type")
     

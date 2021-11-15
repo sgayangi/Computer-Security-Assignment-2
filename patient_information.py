@@ -10,13 +10,35 @@ class PatientInformation:
         print(Utilities.returnPatientData("patient information/drug prescriptions/"+patientID+".txt"))
         print("=================================")
         print()
-    @staticmethod
-    def readLabFile(patientID: str): pass
 
     @staticmethod
-    def readPersonalFile(patientID: str): pass
+    def readLabFile(patientID: str):
+        print("=================================")
+        print("Lab Details for Patient ID " + patientID)
+        print("=================================")
+        print(Utilities.returnPatientData(
+            "patient information/lab test prescriptions/"+patientID+".txt"))
+        print("=================================")
+        print()
 
     @staticmethod
-    def readSicknessile(patientID: str): pass
+    def readPersonalFile(patientID: str):
+        print("=================================")
+        print("Personal Details for Patient ID " + patientID)
+        print("=================================")
+        print(Utilities.returnPatientData(
+            "patient information/personal details/"+patientID+".txt"))
+        print("=================================")
+        print()
+
+    @staticmethod
+    def readSicknessFile(patientID: str):
+        print("=================================")
+        print("Sickness Details for Patient ID " + patientID)
+        print("=================================")
+        print(Utilities.returnPatientData(
+            "patient information/sickness details/"+patientID+".txt"))
+        print("=================================")
+        print()
 
 
