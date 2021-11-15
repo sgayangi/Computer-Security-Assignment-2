@@ -12,13 +12,13 @@ class Utilities:
         # permissionType = ["read", "read write", "no permission"]
         # so 00 means no permission
         permission = "no permission"
-        if (user.privilege_level == "11"): permission = "read write"
+        if (user.privilege_level == "11"): permission = "write"
         elif (user.privilege_level == "10"):
             permission = "read"
         with open('user_details/config.csv', 'a', newline="\n") as fd:
             writer = csv.writer(fd)
             writer.writerow(
-                [user.username, user.password, user.role, permission])
+                [user.id, user.username, user.password, user.role, permission])
 
     @staticmethod
     def getUserFromCsv(username, password):
@@ -26,19 +26,19 @@ class Utilities:
         with open('user_details/config.csv', 'rt') as f:
             reader = csv.reader(f)
             for row in reader:
-                if row[0] == username:
+                if row[1] == username:
                     rowFromFile = row
                     break
         if rowFromFile == []:
             print("Could not find user")
-            quit() 
+            return False
         else:
             enteredPassword = Utilities.hashPassword(password)
-            if enteredPassword == rowFromFile[1]:
-                return User(rowFromFile[0], rowFromFile[1], rowFromFile[2], rowFromFile[3])
+            if enteredPassword == rowFromFile[2]:
+                return User(rowFromFile[0], rowFromFile[1], rowFromFile[2], rowFromFile[3], rowFromFile[4])
             else:
                 print("Incorrect password. Please try again.")
-                quit()
+                return False
 
     @staticmethod
     def hashPassword(password):

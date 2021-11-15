@@ -24,15 +24,16 @@ class Driver:
                 username = input('Username: ')
                 password = input('Password: ')
                 user = Common.login(username, password)
-                while True:
-                    if (user.userType == "Doctor"):
-                        Doctor.start(user)
-                                
+                if (user != "No user registered"):
+                    while True:
+                        if (user.userType == "Doctor"):
+                            Doctor.start(user)
+                else:
+                    print("Invalid username or password.")
             elif function == "q":
                 break
             else:
                 print("Invalid input")
-                break
 
 if __name__ == "__main__":
     Driver.main()

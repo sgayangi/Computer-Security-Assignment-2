@@ -1,11 +1,12 @@
 import hashlib
 class User:
-    def __init__(self, username: str, password: str, userType: str, permissions: str):
+    def __init__(self, id, username: str, password: str, userType: str, permissions: str):
         """
         Create a new user
         @param userType: 1 for Doctor, 2 for Nurse, 3 for LabAssistant, 4 for Patient
         @param permissions: two bits, first for read, second for write, both 0 means no access
         """
+        self.id = id
         self.username = username
         self.password = password
         userTypes = ["Admin", "Doctor", "Nurse", "Lab Assistant", "Patient"]
@@ -16,7 +17,7 @@ class User:
         self.permissions = permissions
         if (permissions == "read"):
             self.privilege_level = "10"
-        elif (permissions == "read write"):
+        elif (permissions == "write"):
             self.privilege_level = "11"
 
 # doctor

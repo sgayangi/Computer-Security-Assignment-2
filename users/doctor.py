@@ -1,7 +1,6 @@
 from user import User
 from patient_information import PatientInformation
 
-
 class Doctor:
 # Doctors can access all 4 types of reports
 
