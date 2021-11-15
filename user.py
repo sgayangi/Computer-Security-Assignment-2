@@ -1,6 +1,6 @@
 import hashlib
 class User:
-    def __init__(self, id, username: str, password: str, userType: str, permissions: str):
+    def __init__(self, id, username: str, password: str, userType: str, access_string: str, registered = True):
         """
         Create a new user
         @param userType: 1 for Doctor, 2 for Nurse, 3 for LabAssistant, 4 for Patient
@@ -13,19 +13,20 @@ class User:
         self.role = userTypes[userTypes.index(userType)]
         self.userType = userType 
         # permissionType = ["read", "read write", "no permission"]
-        self.permissions = permissions
+        if (registered):
+            self.access_string = "{0:b}".format(int(access_string))
+        else:
+            self.access_string = access_string
+        print(self.access_string)
+        one_count = self.access_string.count("1")
+        if (one_count == 1):
+            permissions = "read"
+        elif one_count == 2:
+            permissions = "write"
         if (permissions == "read"):
             self.privilege_level = "10"
         elif (permissions == "write"):
             self.privilege_level = "11"
-        if (self.role == "Doctor"):
-            self.access_string = self.privilege_level + "000000"
-        elif (self.role == "Nurse"):
-            self.access_string = "00"+self.privilege_level + "0000"
-        elif (self.role == "Lab Assistant"):
-            self.access_string = "0000"+self.privilege_level + "00"
-        elif (self.role == "Patient"):
-            self.access_string = "000000" + self.privilege_level
             
     def hasReadAccess(self):
         return self.privilege_level != "10" and self.privilege_level != "11"
