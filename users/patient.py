@@ -10,8 +10,7 @@ class Patient:
 2: View Personal Details
 3: View Sick Details
 4: View Lab Test Prescriptions\n""").strip()
-        if x == "1":
-            if user.privilege_level != "10":
-                print("Insufficient permissions")
-            else:
-                PatientInformation.readPatientFile(user.id, x)
+        if user.privilege_level != "10":
+            print("Insufficient permissions")
+        else:
+            PatientInformation.readPatientFile(user.id, x)
