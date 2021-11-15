@@ -16,7 +16,6 @@ class Doctor:
 2: Personal Details of Patient
 3: Sickness Details
 4: Lab Test Prescriptions\n""")
-        print(user.privilege_level)
         if x == "1":
             if user.privilege_level != "10" and user.privilege_level != "11":
                 print("Insufficient permissions")

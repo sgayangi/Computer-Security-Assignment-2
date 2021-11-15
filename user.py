@@ -12,7 +12,6 @@ class User:
         userTypes = ["Admin", "Doctor", "Nurse", "Lab Assistant", "Patient"]
         self.role = userTypes[userTypes.index(userType)]
         self.userType = userType 
-        print(self.userType)
         # permissionType = ["read", "read write", "no permission"]
         self.permissions = permissions
         if (permissions == "read"):
