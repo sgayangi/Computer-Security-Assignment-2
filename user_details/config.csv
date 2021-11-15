@@ -1,3 +1,2 @@
-id,username,password,role,permissions
-47006929437,G,a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3,Doctor,write
-18678742802,Gt,a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3,Nurse,write
+id,username,password,role,permissions,privilege_level
+44868763339,G,a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3,Doctor,write,192

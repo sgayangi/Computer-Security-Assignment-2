@@ -19,7 +19,7 @@ class User:
             self.privilege_level = "10"
         elif (permissions == "write"):
             self.privilege_level = "11"
-
+        self.access_string = self.privilege_level+"000000"
 # doctor
 # nurse
 # lab assistant

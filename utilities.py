@@ -18,7 +18,7 @@ class Utilities:
         with open('user_details/config.csv', 'a', newline="\n") as fd:
             writer = csv.writer(fd)
             writer.writerow(
-                [user.id, user.username, user.password, user.role, permission])
+                [user.id, user.username, user.password, user.role, permission, int(user.access_string,2)])
 
     @staticmethod
     def getUserFromCsv(username, password):
