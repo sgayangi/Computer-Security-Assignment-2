@@ -11,7 +11,7 @@ class Patient:
 3: View Sick Details
 4: View Lab Test Prescriptions
 5. Edit Personal Details\n""").strip()
-        if (x!="5"):
+        if not PatientInformation.isInvalidFileType(x):
             if user.hasReadAccess():
                 print("Insufficient permissions")
             else:
@@ -19,3 +19,6 @@ class Patient:
         elif (x == "5"):
             data = input("Input personal information: ")
             PatientInformation.updatePatientFile("2", user.id, data)
+        else:
+            print("Invalid input")
+            return

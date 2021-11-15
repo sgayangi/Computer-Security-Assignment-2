@@ -95,3 +95,7 @@ class PatientInformation:
     def updateSicknessFile(patientID: str, data: str):
         Utilities.updatePatientData(
             "patient information/sickness details/"+patientID+".txt", data)
+
+    @staticmethod
+    def isInvalidFileType(file_type: str):
+        return file_type != "1" and file_type !="2" and file_type != "3" and file_type != "4"

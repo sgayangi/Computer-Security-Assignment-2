@@ -23,7 +23,7 @@ class Doctor:
 3: Sickness Details
 4: Lab Test Prescriptions\n""")
         if x == "1":
-            if (file_type != "1" and file_type != "2" and file_type != "3" and file_type != "4"):
+            if PatientInformation.isInvalidFileType(file_type):
                 print("Invalid input")
                 return
             if user.hasReadAccess():

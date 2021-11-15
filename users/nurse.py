@@ -19,20 +19,27 @@ class Nurse:
 1: Drug Prescriptions
 2: Personal Details of Patient
 3: Sickness Details\n""")
-
-        print(user.privilege_level)
+        else:
+            print("Invalid input")
+            return
         if x == "1":
             if user.hasReadAccess():
                 print("Insufficient permissions")
+                return
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
         elif x=="2":
             if user.hasWriteAccess():
                 print("Insufficient permissions")
+                return
+
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(
                     file_type, patient_id, data)
-        else: print("Invalid input.")
+        else:
+            print("Invalid input.")
+            return
+
 
 # ddnnllpp

@@ -15,12 +15,14 @@ class LabAssistant:
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(patient_id, "4")
-        else:
+        elif x=="2":
             if user.hasWriteAccess():
                 print("Insufficient permissions")
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(
                     "4", patient_id, data)
-
+        else:
+            print("Invalid input")
+            return
 # ddnnllpp
