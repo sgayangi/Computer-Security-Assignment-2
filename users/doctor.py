@@ -9,7 +9,6 @@ class Doctor:
         x = input("""What would you like to do?
 1: View Patient File
 2: Update/Create Patient File\n""").strip()
-        patient_id = input("Input Patient ID: ")
         # personal details, sickness details, drug prescriptions, and lab test prescriptions
         if (x == "1"):
             file_type = input("""Select File Type.
@@ -17,11 +16,16 @@ class Doctor:
 2: Personal Details of Patient
 3: Sickness Details
 4: Lab Test Prescriptions\n""")
-        else:
+        elif x=="2":
             file_type = input("""Select File Type.
 1: Drug Prescriptions
 3: Sickness Details
 4: Lab Test Prescriptions\n""")
+        else:
+            print("Invalid input")
+            return
+        patient_id = input("Input Patient ID: ")
+
         if x == "1":
             if PatientInformation.isInvalidFileType(file_type):
                 print("Invalid input")
