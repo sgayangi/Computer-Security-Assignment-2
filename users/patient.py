@@ -12,7 +12,7 @@ class Patient:
 4: View Lab Test Prescriptions
 5. Edit Personal Details\n""").strip()
         if not PatientInformation.isInvalidFileType(x):
-            if user.hasReadAccess():
+            if not user.hasReadAccess():
                 print("Insufficient permissions")
             else:
                 PatientInformation.readPatientFile(user.id, x)

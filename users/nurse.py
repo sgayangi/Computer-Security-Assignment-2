@@ -23,16 +23,18 @@ class Nurse:
             print("Invalid input")
             return
         if x == "1":
-            if user.hasReadAccess():
+            if (file_type != "1" and file_type != "2" and file_type != "3"):
+                print("Invalid input")
+                return
+            if not user.hasReadAccess():
                 print("Insufficient permissions")
                 return
             else:
                 PatientInformation.readPatientFile(patient_id, file_type)
         elif x=="2":
-            if user.hasWriteAccess():
+            if not user.hasWriteAccess():
                 print("Insufficient permissions")
                 return
-
             else:
                 data = input("Input patient information: ")
                 PatientInformation.updatePatientFile(

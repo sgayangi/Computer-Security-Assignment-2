@@ -28,10 +28,10 @@ class User:
             self.privilege_level = "11"
             
     def hasReadAccess(self):
-        return self.privilege_level != "10" and self.privilege_level != "11"
+        return self.privilege_level == "10" or self.privilege_level == "11"
 
     def hasWriteAccess(self):
-        return self.privilege_level != "10" and self.privilege_level != "11"
+        return self.privilege_level == "11"
 # doctor
 # nurse
 # lab assistant

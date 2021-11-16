@@ -4,6 +4,7 @@ from users.doctor import Doctor
 from users.lab import LabAssistant
 from users.nurse import Nurse
 from users.patient import Patient
+import getpass
 class Driver:
 
     @staticmethod
@@ -13,7 +14,7 @@ class Driver:
             function = input()
             if function =="2": 
                 username = input('Username: ').strip()
-                password = input('Password: ').strip()
+                password = getpass.getpass('Password: ').strip()
                 userType = input(
 """Select a user type. (Enter relevant number)
 1: Doctor
@@ -41,7 +42,7 @@ class Driver:
                 print("Registration successful. Please login.")
             elif function == "1":
                 username = input('Username: ')
-                password = input('Password: ')
+                password = getpass.getpass('Password: ')
                 user = Common.login(username, password)
                 if (user != "No user registered"):
                     while True:
