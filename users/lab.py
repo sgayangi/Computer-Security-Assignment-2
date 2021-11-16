@@ -9,7 +9,6 @@ class LabAssistant:
 1: View Patient Lab Test File
 2: Update/Create Lab Test File\n""").strip()
         patient_id = input("Input Patient ID: ")
-        print(user.privilege_level)
         if x == "1":
             if not user.hasReadAccess():
                 print("Insufficient permissions")
