@@ -17,7 +17,6 @@ class User:
             self.access_string = "{0:b}".format(int(access_string))
         else:
             self.access_string = access_string
-        print(self.access_string)
         one_count = self.access_string.count("1")
         if (one_count == 1):
             permissions = "read"

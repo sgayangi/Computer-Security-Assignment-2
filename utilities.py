@@ -39,7 +39,7 @@ class Utilities:
 
     @staticmethod
     def hashPassword(password):
-        pw_hash = hashlib.sha256(password.encode("utf-8")).hexdigest()
+        pw_hash = hashlib.md5(password.encode("utf-8")).hexdigest()
         return pw_hash
 
     @staticmethod
